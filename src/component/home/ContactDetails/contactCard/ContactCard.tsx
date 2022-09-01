@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 import { useState } from 'react';
-import { Layout, Card, Typography } from 'antd';
+import { Layout, Card } from 'antd';
 import { useLocalStore } from '../../../../hooks';
 import { useAppDispatch } from '../../../../app/hooks';
 import { BottomIcon, DetailTexts, EditDetail } from './index';
@@ -9,7 +9,6 @@ import { DeleteIcon, EditIcon, FavouriteIcon, UnfavouriteIcon } from '../../../.
 
 
 const { Content } = Layout;
-const { Title } = Typography;
 
 
 interface IContactCardProps{
@@ -69,25 +68,23 @@ function ContactCard({ id, name, email, phone, website, avatar }: IContactCardPr
                   ]}
             >
 
-                  <Content className={`contact-card__info flex flex-col  ${!toEditContact ?'gap-6 body-text--padding' :'gap-2 body-input--padding'}  justify- m-0`}>
-                        <Title className='text-2xl m-0'>{name}</Title>
-
-                        <Content className={`flex flex-col gap-3`}>
-                              {!toEditContact
-                                    ? <DetailTexts
-                                          email={email}
-                                          phone={phone}
-                                          website={website}
-                                      /> 
-                                      
-                                    : <EditDetail
-                                          id={id}
-                                          email={email}
-                                          phone={phone}
-                                          website={website}
-                                     />
-                              }
-                        </Content>
+                  <Content className={`card__body flex flex-col ${!toEditContact ?'body-text--padding' :'body-input--padding'}  justify-center m-0`}>
+                        {!toEditContact
+                              ? <DetailTexts
+                                    name={name}
+                                    email={email}
+                                    phone={phone}
+                                    website={website}
+                                /> 
+                                    
+                              : <EditDetail
+                                    id={id}
+                                    name={name}
+                                    email={email}
+                                    phone={phone}
+                                    website={website}
+                                 />
+                        }
                   </Content>
 
             </Card> 

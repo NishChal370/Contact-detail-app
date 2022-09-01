@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import getUserImage from "../utils/getUserImage";
 import { deleteUserDetail, fetchUsersDetail, putUserDetail } from "./requests";
 
 
@@ -8,6 +9,7 @@ type User = {
       email: string,
       phone: string,
       website: string,  
+      avatar: string,
 }
 
 type InitialState ={
@@ -36,7 +38,7 @@ const UsersDetailSlice = createSlice({
             builder.addCase(fetchUsersDetail.fulfilled, (state, action: PayloadAction<User[]>)=>{
                   state.error = '';
                   state.loading = false;
-                  state.usersDetail = action.payload;
+                  state.usersDetail = action.payload.filter(user => user['avatar'] = getUserImage())
             })
 
             builder.addCase(fetchUsersDetail.rejected, (state, action)=>{
@@ -51,9 +53,10 @@ const UsersDetailSlice = createSlice({
                   state.loading = false;
 
                   state.usersDetail = state.usersDetail.filter(presentDetail =>{
-                        const { id, email, phone, website} = action.payload;
+                        const { id, name, email, phone, website } = action.payload;
                         
                         if(presentDetail.id === id){
+                              presentDetail.name = name
                               presentDetail.email = email
                               presentDetail.phone = phone
                               presentDetail.website = website

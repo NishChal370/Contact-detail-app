@@ -6,6 +6,7 @@ import { putUserDetail } from "../feature/requests";
 type InitialState = {
       [key: string]: string | number,
       id: number,
+      name: string
       email: string,
       phone: string,
       website: string,

@@ -1,17 +1,15 @@
 import { nanoid } from 'nanoid';
 import { useEffect } from 'react';
-import { ErrorMessage, LoadingMessage } from '../../common/message';
 import ContactCard from './contactCard/ContactCard';
-import getUserImage from '../../../utils/getUserImage';
 import { fetchUsersDetail } from '../../../feature/requests';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
+import { ErrorMessage, LoadingMessage } from '../../common/message';
 
 
 
 
 function ContactDetails() {
-      const dispatch = useAppDispatch();
-      
+      const dispatch = useAppDispatch(); 
       const { loading, error, usersDetail } = useAppSelector(state => state.usersDetail);
 
 
@@ -26,7 +24,7 @@ function ContactDetails() {
 
       if (!loading && Object.keys(usersDetail).length) return (
             <>
-            {usersDetail.map( ({name, email, phone, website, id})=>{return(
+            {usersDetail.map( ({name, email, phone, website, id, avatar})=>{return(
 
                   <ContactCard key={nanoid()}
                         id={id}
@@ -34,7 +32,7 @@ function ContactDetails() {
                         email= {email}
                         phone= {phone}
                         website= {website}
-                        avatar={getUserImage()}
+                        avatar={avatar}
                   />
             )} )  }
             </>

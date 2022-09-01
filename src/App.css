@@ -65,13 +65,16 @@ body{
 /*      Card       */
 
 .ant-card-body{
-      padding: 1rem 1rem 0rem 1rem;
+      padding: 0rem 1rem 0rem 1rem;
 }
 
 .body-text--padding{
+      padding-top: 1rem !important;
       padding-bottom: 2.1rem !important;
 }
+
 .body-input--padding{
+      padding-top: 0.8rem !important;
       padding-bottom: 0.1rem !important;
 }
 
