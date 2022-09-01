@@ -1,4 +1,4 @@
 import NavBar from "./navBar/NavBar";
-import ContactCard from "./home/contactCard/ContactCard";
-
-export { NavBar, ContactCard }
+import ContactDetails from "./home/ContactDetails/ContactDetails";
+import ContactCard from "./home/ContactDetails/contactCard/ContactCard";
+export { NavBar, ContactDetails, ContactCard }
