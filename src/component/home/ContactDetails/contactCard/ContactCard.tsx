@@ -18,10 +18,10 @@ interface IContactCardProps{
       email: string,
       phone: string,
       website: string,
-      image: string
+      avatar: string
 }
 
-function ContactCard({ id, name, email, phone, website, image }: IContactCardProps) {
+function ContactCard({ id, name, email, phone, website, avatar }: IContactCardProps) {
       const dispatch = useAppDispatch();
       const [localStore, modifyLocalStore] = useLocalStore();
       const [toEditContact, setToEditContact] = useState(false);
@@ -37,7 +37,7 @@ function ContactCard({ id, name, email, phone, website, image }: IContactCardPro
                               <img
                                     className='object-cover bg-fixed w-full h-full'
                                     alt="user-image"
-                                    src={image}
+                                    src={avatar}
                               />
                         </figure>
                   }
