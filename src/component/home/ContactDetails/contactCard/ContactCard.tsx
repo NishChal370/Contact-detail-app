@@ -1,6 +1,7 @@
 import { Layout, Card, Avatar, Typography } from 'antd';
-import { DeleteIcon, EditIcon, EmailIcon, FavouriteIcon, PhoneIcon, UnfavouriteIcon, WebIcon } from '../../../../assets';
 import BottomIcon from './BottomIcon';
+import useLocalStore from '../../../../hooks/useLocalStore';
+import { DeleteIcon, EditIcon, EmailIcon, FavouriteIcon, PhoneIcon, UnfavouriteIcon, WebIcon } from '../../../../assets';
 
 
 const { Meta } = Card;
@@ -9,6 +10,7 @@ const { Title } = Typography;
 
 
 interface IContactCardProps{
+      id: number
       name: string,
       email: string,
       phone: string,
@@ -16,7 +18,9 @@ interface IContactCardProps{
       image: string
 }
 
-function ContactCard({ name, email, phone, website, image }: IContactCardProps) {
+function ContactCard({ id, name, email, phone, website, image }: IContactCardProps) {
+      const [localStore, modifyLocalStore] = useLocalStore();
+
       return (
             <Card
                   className='contact-card__container w-full shadow-[0_35px_60px_-15px_rgba(0,0,0,0.1)]'
@@ -36,7 +40,9 @@ function ContactCard({ name, email, phone, website, image }: IContactCardProps) 
                   actions={[
                         <BottomIcon
                               name="favourite-icon"
-                              icon={UnfavouriteIcon}
+                              icon={localStore.includes(id) ?FavouriteIcon :UnfavouriteIcon}
+                              clickEvent={()=>modifyLocalStore(id)}
+
                         />,
                         <BottomIcon
                               name="edit-icon"
@@ -70,7 +76,7 @@ function ContactCard({ name, email, phone, website, image }: IContactCardProps) 
                               />
 
                               <Meta
-                                    title={<a href={website}>{website}</a>}
+                                    title={<a href={`http://www.${website} `}>{website}</a>}
                                     avatar={
                                           <a href={`http://www.${website} `}>
                                                 <Avatar src={WebIcon} className="w-7 h-full"/>

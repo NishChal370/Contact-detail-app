@@ -1,18 +1,20 @@
 import { nanoid } from 'nanoid';
 import { useEffect } from 'react'
+import ContactCard from './contactCard/ContactCard';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import { fetchUsersDetail } from '../../../feature/UsersDetailSlice';
-import ContactCard from './contactCard/ContactCard';
 
 
 
 function ContactDetails() {
       const dispatch = useAppDispatch();
+      
       const { loading, error, usersDetail } = useAppSelector(state => state.usersDetail);
 
 
       useEffect(()=>{
-            dispatch(fetchUsersDetail());
+
+            dispatch(fetchUsersDetail());    
       },[])
 
       if ( loading ) return <h1>Loading..</h1>
@@ -24,6 +26,7 @@ function ContactDetails() {
             {usersDetail.map( ({name, email, phone, website, id})=>{return(
 
                   <ContactCard key={nanoid()}
+                        id={id}
                         name= {name}
                         email= {email}
                         phone= {phone}
