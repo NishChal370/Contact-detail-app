@@ -2,7 +2,8 @@ import { nanoid } from 'nanoid';
 import { useEffect } from 'react'
 import ContactCard from './contactCard/ContactCard';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
-import { fetchUsersDetail } from '../../../feature/UsersDetailSlice';
+import { fetchUsersDetail } from '../../../feature/requests';
+
 
 
 

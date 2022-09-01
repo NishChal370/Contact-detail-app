@@ -1,9 +1,6 @@
 import axios, { AxiosInstance }  from 'axios';
 
 export const AXIOS: AxiosInstance = axios.create({
-      baseURL: "https://jsonplaceholder.typicode.com/",
+      baseURL: "https://jsonplaceholder.typicode.com/users/",
 
 });
-  
-
-export const URL_USERS_Detail: string = 'users/';

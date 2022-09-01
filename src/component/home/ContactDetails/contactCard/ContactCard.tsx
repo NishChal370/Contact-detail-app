@@ -1,10 +1,13 @@
-import { Layout, Card, Avatar, Typography } from 'antd';
-import BottomIcon from './BottomIcon';
-import useLocalStore from '../../../../hooks/useLocalStore';
-import { DeleteIcon, EditIcon, EmailIcon, FavouriteIcon, PhoneIcon, UnfavouriteIcon, WebIcon } from '../../../../assets';
+import Swal from 'sweetalert2';
+import { useState } from 'react';
+import { Layout, Card, Typography } from 'antd';
+import { useLocalStore } from '../../../../hooks';
+import { useAppDispatch } from '../../../../app/hooks';
+import { BottomIcon, DetailTexts, EditDetail } from './index';
+import { deleteUserDetail } from '../../../../feature/requests';
+import { DeleteIcon, EditIcon, FavouriteIcon, UnfavouriteIcon } from '../../../../assets';
 
 
-const { Meta } = Card;
 const { Content } = Layout;
 const { Title } = Typography;
 
@@ -19,7 +22,9 @@ interface IContactCardProps{
 }
 
 function ContactCard({ id, name, email, phone, website, image }: IContactCardProps) {
+      const dispatch = useAppDispatch();
       const [localStore, modifyLocalStore] = useLocalStore();
+      const [toEditContact, setToEditContact] = useState(false);
 
       return (
             <Card
@@ -31,7 +36,7 @@ function ContactCard({ id, name, email, phone, website, image }: IContactCardPro
                         <figure className='w-full h-[16rem]'>
                               <img
                                     className='object-cover bg-fixed w-full h-full'
-                                    alt="example"
+                                    alt="user-image"
                                     src={image}
                               />
                         </figure>
@@ -47,43 +52,42 @@ function ContactCard({ id, name, email, phone, website, image }: IContactCardPro
                         <BottomIcon
                               name="edit-icon"
                               icon={EditIcon}
+                              clickEvent={()=>  setToEditContact(preState => !preState)}
                         />,
                         <BottomIcon
                               name="delete-icon"
                               icon={DeleteIcon}
+                              clickEvent={()=>{
+                                    dispatch(deleteUserDetail(id));
+
+                                    localStore.includes(id) && modifyLocalStore(id);
+                                    
+                                    Swal.fire(`${name} deleted successfully`, 'This is temporary delete', 'success');
+
+                              }}
                         />,
                   ]}
             >
 
-                  <Content className='contact-card__info flex flex-col gap-6 justify-start p-0 m-0'>
+                  <Content className={`contact-card__info flex flex-col  ${!toEditContact ?'gap-6 body-text--padding' :'gap-2 body-input--padding'}  justify- m-0`}>
                         <Title className='text-2xl m-0'>{name}</Title>
 
-                        <Content className='flex flex-col gap-3'>
-                              <Meta
-                                    title={<a href={`mailto: ${email}`}>{email}</a>}
-                                    avatar={
-                                          <a href={`mailto: ${email}`}> 
-                                                <Avatar src={EmailIcon} className="w-7 h-full"/> 
-                                          </a>}
-                              />
-
-                              <Meta
-                                    title={<a href={`tel: ${phone}`}>{phone}</a>}
-                                    avatar={
-                                          <a href={`tel: ${phone}`}>
-                                                <Avatar src={PhoneIcon} className="w-7 h-full"/>
-                                          </a>}
-                              />
-
-                              <Meta
-                                    title={<a href={`http://www.${website} `}>{website}</a>}
-                                    avatar={
-                                          <a href={`http://www.${website} `}>
-                                                <Avatar src={WebIcon} className="w-7 h-full"/>
-                                          </a>}
-                              />
+                        <Content className={`flex flex-col gap-3`}>
+                              {!toEditContact
+                                    ? <DetailTexts
+                                          email={email}
+                                          phone={phone}
+                                          website={website}
+                                      /> 
+                                      
+                                    : <EditDetail
+                                          id={id}
+                                          email={email}
+                                          phone={phone}
+                                          website={website}
+                                     />
+                              }
                         </Content>
-
                   </Content>
 
             </Card> 
