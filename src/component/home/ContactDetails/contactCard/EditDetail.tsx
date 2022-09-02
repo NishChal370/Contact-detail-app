@@ -1,4 +1,4 @@
-import { Avatar, Button, Form, Input, Layout } from "antd"
+import { Avatar, Button, Form, Input, Layout } from "antd";
 import { useFormInput } from "../../../../hooks";
 import { EmailIcon, PhoneIcon, WebIcon } from "../../../../assets";
 
@@ -19,31 +19,28 @@ function EditDetail({id, name, email, phone, website}: IEditDetail) {
 
       return (
             <Form
+                  id={id.toString()}
                   className="flex flex-col gap-[0.57rem] justify-center m-0"
                   onFinish={submitHandler}
             >
                   <Input className="border-0 border-b-2 p-0 text-2xl m-0 font-bold"
                         placeholder="users name.."
                         name="name"
-                        required
                         value={inputValue.name} onChange={inputChangeHandler}
                   />
 
                   <Content className={`flex flex-col gap-0 p-0 m-0`}>
-                        <Item 
-                              className="h-fit"
+                        <Item   
                               label={
                                     <a href={`mailto: ${email}`}> 
                                           <Avatar src={EmailIcon} className="w-7 h-full"/> 
                                     </a>
                               }
-                              rules={[{ required: true, message: 'Please input user name!' }]}
                         >
                               
                               <Input className="border-0 border-b-2 p-0"
                                     placeholder="email.."
                                     name="email"
-                                    required
                                     value={inputValue.email} onChange={inputChangeHandler}
                               />
                         </Item>
@@ -54,13 +51,11 @@ function EditDetail({id, name, email, phone, website}: IEditDetail) {
                                           <Avatar src={PhoneIcon} className="w-7 h-full"/>
                                     </a>
                               }
-                              rules={[{ required: true, message: 'Please input user phone number!' }]}
                         >
                               
                               <Input className="border-0 border-b-2 p-0" 
                                     placeholder="phone number.."
                                     name="phone"
-                                    required
                                     value={inputValue.phone} onChange={inputChangeHandler}
                               />
                         </Item>
@@ -77,7 +72,6 @@ function EditDetail({id, name, email, phone, website}: IEditDetail) {
                               <Input className="border-0 border-b-2 p-0" 
                                     placeholder="website.."
                                     name="website"
-                                    required
                                     value={inputValue.website} onChange={inputChangeHandler}
                               />
                         </Item>

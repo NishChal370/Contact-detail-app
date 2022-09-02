@@ -2,6 +2,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import { useAppDispatch } from "../app/hooks";
 import { putUserDetail } from "../feature/requests";
+import validateInputs from "../utils/validateInputs";
 
 type InitialState = {
       [key: string]: string | number,
@@ -23,6 +24,8 @@ function useFormInput(initialState: InitialState) {
       }
 
       const submitHandler = (): void=>{
+            if(! validateInputs(inputValue)) return
+
             Swal.fire(`Changed successfully`, 'This is temporary change', 'success'); 
 
             dispatch(putUserDetail(inputValue))

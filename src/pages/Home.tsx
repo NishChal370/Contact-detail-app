@@ -1,4 +1,4 @@
-import { Layout, PageHeader, Typography } from 'antd';
+import { Layout, Typography } from 'antd';
 import { ContactDetails } from '../component';
 
 const { Content } = Layout;
