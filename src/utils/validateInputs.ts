@@ -21,17 +21,17 @@ const validateInputs = (inputValue: InputValue): boolean =>{
             return errorMessage({id, name:'name'});
       }
 
-      if(!email.trim().match(EMAIL_REGEX)){
+      if(!email.trim().length || !email.trim().match(EMAIL_REGEX)){
             
             return errorMessage({id, name:'email'});
       }
 
-      if(phone.trim().match(ALPHABET_REGEX)){
+      if(!phone.trim().length || phone.trim().match(ALPHABET_REGEX) || phone.trim().length <10){
 
             return errorMessage({id, name:'phone'});
       }
 
-      if(!website.trim().match(WEB_LINK_REGEX)){
+      if(!website.trim().length || !website.trim().match(WEB_LINK_REGEX)){
             
             return errorMessage({id, name:'website'});
       }
