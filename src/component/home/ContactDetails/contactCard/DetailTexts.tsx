@@ -5,14 +5,14 @@ const { Meta } = Card;
 const { Content } = Layout;
 const { Title } = Typography;
 
-interface DetailTexts{
+interface IDetailTexts{
       name: string
       email: string,
       phone: string,
       website: string,
 }
 
-function DetailTexts({ name, email, phone, website}: DetailTexts) {
+function DetailTexts({ name, email, phone, website}: IDetailTexts) {
 
       return (
             <Content className={`contact-card__info flex flex-col gap-6 justify-center`}>

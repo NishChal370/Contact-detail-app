@@ -3,10 +3,9 @@ import { useState } from 'react';
 import { Layout, Card } from 'antd';
 import { useLocalStore } from '../../../../hooks';
 import { useAppDispatch } from '../../../../app/hooks';
-import { BottomIcon, DetailTexts, EditDetail } from './index';
+import { BottomIcon, DetailTexts, EditDetail  } from './index';
 import { deleteUserDetail } from '../../../../feature/requests';
 import { DeleteIcon, EditIcon, FavouriteIcon, UnfavouriteIcon } from '../../../../assets';
-
 
 const { Content } = Layout;
 
@@ -23,7 +22,7 @@ interface IContactCardProps{
 function ContactCard({ id, name, email, phone, website, avatar }: IContactCardProps) {
       const dispatch = useAppDispatch();
       const [localStore, modifyLocalStore] = useLocalStore();
-      const [toEditContact, setToEditContact] = useState(false);
+      const [toEditContact, setToEditContact] = useState<boolean>(false);
 
       return (
             <Card

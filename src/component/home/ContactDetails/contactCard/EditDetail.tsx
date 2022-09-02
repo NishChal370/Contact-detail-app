@@ -1,11 +1,11 @@
-import { Avatar, Button, Form, Input, Layout } from "antd";
+import { Avatar, Button, Form, Input, Layout } from "antd"
 import { useFormInput } from "../../../../hooks";
 import { EmailIcon, PhoneIcon, WebIcon } from "../../../../assets";
 
 const { Item } = Form;
 const { Content } = Layout;
 
-interface DetailTexts{
+interface IEditDetail{
       id: number,
       name: string,
       email: string,
@@ -14,7 +14,7 @@ interface DetailTexts{
 }
 
 
-function EditDetail({id, name, email, phone, website}: DetailTexts) {
+function EditDetail({id, name, email, phone, website}: IEditDetail) {
       const [inputValue, inputChangeHandler, submitHandler] = useFormInput({id, name, email, phone, website});
 
       return (
