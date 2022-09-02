@@ -9,7 +9,7 @@ type InputValue = {
       website: string,
 }
 
-const EMAIL_REGEX: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const EMAIL_REGEX: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/;
 const WEB_LINK_REGEX: RegExp = /^[a-z]{1,10}(\.[a-z]{2,5})$/;
 const ALPHABET_REGEX: RegExp = /[a-wy-zA-WY-Z]+$/;
 
