@@ -15,7 +15,7 @@ interface IDetailTexts{
 function DetailTexts({ name, email, phone, website}: IDetailTexts) {
 
       return (
-            <Content className={`contact-card__info flex flex-col gap-6 justify-center`}>
+            <Content className={`detail-text__container flex flex-col gap-6 justify-center`}>
                   <Title className='text-2xl m-0'>{name}</Title>
 
                   <Content className={`flex flex-col gap-3`}>

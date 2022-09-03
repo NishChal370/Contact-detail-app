@@ -8,6 +8,8 @@ import UnfavouriteIcon from './home/contactCard/unfavourite-icon.png';
 
 import NotFoundIcon from './common/message/notFound-icon.png';
 
+import SkyPhoneImage  from './home/skyPhone.jpg';
+
 import UserOneImage from './home/users/user1.png';
 import UserTwoImage from './home/users/user2.png';
 import UserThreeImage from './home/users/user3.png';
@@ -20,5 +22,5 @@ import UserNineImage from './home/users/user9.jpeg';
 import UserTenImage from './home/users/user10.jpeg';
 
 export { EmailIcon, PhoneIcon, WebIcon, FavouriteIcon, EditIcon, DeleteIcon, UnfavouriteIcon,
-      NotFoundIcon,
+      NotFoundIcon, SkyPhoneImage,
       UserOneImage, UserTwoImage, UserThreeImage, UserFourImage, UserFiveImage, UserSixImage, UserSevenImage, UserEightImage, UserNineImage, UserTenImage }

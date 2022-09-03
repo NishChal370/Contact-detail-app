@@ -69,20 +69,9 @@ function ContactCard({ id, name, email, phone, website, avatar }: IContactCardPr
 
                   <Content className={`card__body flex flex-col ${!toEditContact ?'body-text--padding' :'body-input--padding'}  justify-center m-0`}>
                         {!toEditContact
-                              ? <DetailTexts
-                                    name={name}
-                                    email={email}
-                                    phone={phone}
-                                    website={website}
-                                /> 
+                              ? <DetailTexts { ...{name, email, phone, website} } /> 
                                     
-                              : <EditDetail
-                                    id={id}
-                                    name={name}
-                                    email={email}
-                                    phone={phone}
-                                    website={website}
-                                 />
+                              : <EditDetail { ...{id, name, email, phone, website} } />
                         }
                   </Content>
 

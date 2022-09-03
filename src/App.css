@@ -78,7 +78,7 @@ body{
       padding-bottom: 0.1rem !important;
 }
 
-.contact-card__info>.ant-layout-content:nth-child(2){
+.detail-text__container>.ant-layout-content:nth-child(2){
       padding: 0rem 0.3rem;
 }
 

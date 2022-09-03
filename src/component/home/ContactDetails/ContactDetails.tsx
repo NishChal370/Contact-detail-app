@@ -24,15 +24,10 @@ function ContactDetails() {
 
       if (!loading && Object.keys(usersDetail).length) return (
             <>
-            {usersDetail.map( ({name, email, phone, website, id, avatar})=>{return(
+            {usersDetail.map( (userDetail)=>{return(
 
                   <ContactCard key={nanoid()}
-                        id={id}
-                        name= {name}
-                        email= {email}
-                        phone= {phone}
-                        website= {website}
-                        avatar={avatar}
+                        {...userDetail}
                   />
             )} )  }
             </>
