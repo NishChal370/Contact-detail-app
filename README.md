@@ -19,6 +19,7 @@ The application is single page application. Where the user of the application ca
 - [x] Add or remove the required users to their favorites list.
 - [x] Change user information such as name, phone, email, and web link.
 - [x] If the users want, remove users'.
+- [x] Can change the application language English or Nepali .
 
 
 **Note: LocalStore is used to store favourite users' contact.**
@@ -47,10 +48,15 @@ The application is single page application. Where the user of the application ca
 
 :monkey: **nanoid : "^4.0.0"**
 
-:monkey: **react-toastify": "^9.0.8"**
+:monkey: **react-toastify : "^9.0.8"**
 
-:monkey: **sweetalert2": "^11.4.29"**
+:monkey: **sweetalert2 : "^11.4.29"**
 
+:monkey: **react-i18next : "^11.18.5"**
+
+:monkey: **i18next-browser-languagedetector : "^6.1.5"**
+
+:monkey: **i18next-http-backend : "^1.4.1"**
 
 ## Installation
 
@@ -85,6 +91,13 @@ npm start
 **react-toastify :** React-Toastify is one of the top React toast libraries available.  With the help of this tool, you can easily add toast notifications to your application and establish alerts and notifications.
 
 **sweetalert2 :** SweetAlert2 comes with 5 built-in icon which will show a corresponding icon animation: warning, error, success, info, and question. It helps to display the necessary notification to the user easily.
+
+**react-i18next :** It is an internationalization library, that uses components to render or re-render the translated content of your application once users request a change of language. These plugins carry out tasks including localization caching, loading the translated content from the backend server, and packaging the translations with a web pack, among others. It also detect the user's preferred languages.
+
+**i18next-browser-languagedetector :** This is a i18next language detection plugin use to detect user language in the browser with support for: cookie, sessionStorage, localStorage, navigator, querystring, htmlTag, path, subdomain.
+
+**i18next-http-backend :** It used in Node.js, in the browser and for Deno. It loads resources from a backend server using the XMLHttpRequest or the fetch API. It is used with i18next.
+
 
 ## Test Coverage
 
