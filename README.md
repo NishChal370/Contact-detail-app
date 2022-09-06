@@ -88,15 +88,15 @@ npm start
 
 ***nanoid :*** A tiny, secure, URL-friendly, unique string ID generator for JavaScript.
 
-**react-toastify :** React-Toastify is one of the top React toast libraries available.  With the help of this tool, you can easily add toast notifications to your application and establish alerts and notifications.
+***react-toastify :*** React-Toastify is one of the top React toast libraries available.  With the help of this tool, you can easily add toast notifications to your application and establish alerts and notifications.
 
-**sweetalert2 :** SweetAlert2 comes with 5 built-in icon which will show a corresponding icon animation: warning, error, success, info, and question. It helps to display the necessary notification to the user easily.
+***sweetalert2 :*** SweetAlert2 comes with 5 built-in icon which will show a corresponding icon animation: warning, error, success, info, and question. It helps to display the necessary notification to the user easily.
 
-**react-i18next :** It is an internationalization library, that uses components to render or re-render the translated content of your application once users request a change of language. These plugins carry out tasks including localization caching, loading the translated content from the backend server, and packaging the translations with a web pack, among others. It also detect the user's preferred languages.
+***react-i18next :*** It is an internationalization library, that uses components to render or re-render the translated content of your application once users request a change of language. These plugins carry out tasks including localization caching, loading the translated content from the backend server, and packaging the translations with a web pack, among others. It also detect the user's preferred languages.
 
-**i18next-browser-languagedetector :** This is a i18next language detection plugin use to detect user language in the browser with support for: cookie, sessionStorage, localStorage, navigator, querystring, htmlTag, path, subdomain.
+***i18next-browser-languagedetector :*** This is a i18next language detection plugin use to detect user language in the browser with support for: cookie, sessionStorage, localStorage, navigator, querystring, htmlTag, path, subdomain.
 
-**i18next-http-backend :** It used in Node.js, in the browser and for Deno. It loads resources from a backend server using the XMLHttpRequest or the fetch API. It is used with i18next.
+***i18next-http-backend :*** It used in Node.js, in the browser and for Deno. It loads resources from a backend server using the XMLHttpRequest or the fetch API. It is used with i18next.
 
 
 ## Test Coverage
