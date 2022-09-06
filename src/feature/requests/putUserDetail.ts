@@ -11,9 +11,9 @@ type InputValue = {
 
 export const putUserDetail = createAsyncThunk(
       '/putUserDetail',
-      (inputValue: InputValue)=>{
-            return AXIOS
-                  .put(`${inputValue.id}`, inputValue)
-                  .then( ({data})=> data )
+      async (inputValue: InputValue)=>{
+            const { data } = await AXIOS
+                              .put(`${inputValue.id}`, inputValue)
+            return data
       }
 )

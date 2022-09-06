@@ -8,6 +8,9 @@ import UnfavouriteIcon from './home/contactCard/unfavourite-icon.png';
 
 import NotFoundIcon from './common/message/notFound-icon.png';
 
+import UKIcon from './common/flag/uk.png';
+import NepalIcon from './common/flag/nepal.png';
+
 import SkyPhoneImage  from './home/skyPhone.jpg';
 
 import UserOneImage from './home/users/user1.png';
@@ -21,6 +24,7 @@ import UserEightImage from './home/users/user8.jpeg';
 import UserNineImage from './home/users/user9.jpeg';
 import UserTenImage from './home/users/user10.jpeg';
 
+
 export { EmailIcon, PhoneIcon, WebIcon, FavouriteIcon, EditIcon, DeleteIcon, UnfavouriteIcon,
-      NotFoundIcon, SkyPhoneImage,
+      NotFoundIcon, SkyPhoneImage, UKIcon, NepalIcon,
       UserOneImage, UserTwoImage, UserThreeImage, UserFourImage, UserFiveImage, UserSixImage, UserSevenImage, UserEightImage, UserNineImage, UserTenImage }

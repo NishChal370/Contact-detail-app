@@ -3,9 +3,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const deleteUserDetail = createAsyncThunk(
       '/deleteUserDetail',
-      (id: number)=>{
-            return AXIOS
-                  .delete(id.toString())
-                  .then( ()=> id)
+      async (id: number)=>{
+            await AXIOS
+                  .delete(id.toString());
+            return id;
       }
 )

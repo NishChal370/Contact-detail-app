@@ -1,4 +1,4 @@
-import React from 'react';
+import { Suspense } from 'react';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -6,15 +6,22 @@ import App from './App';
 import store from './app/store';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { LoadingMessage } from './component/common/message';
+
+import './language/config';
+import { LanguageSelector } from './component';
 
 const root = ReactDOM.createRoot(
       document.getElementById('root') as HTMLElement
 );
 
 root.render(
-      <React.StrictMode>
+      <Suspense fallback={<LoadingMessage/>} >
             <Provider store={store}>
-                  <App />
+                  
+                  <LanguageSelector>
+                        <App/>
+                  </LanguageSelector>                        
 
                   {/* for alert */}
                   <ToastContainer
@@ -29,5 +36,5 @@ root.render(
                         pauseOnHover
                   />
             </Provider>
-      </React.StrictMode>
+      </Suspense>
 );

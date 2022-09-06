@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import { nanoid } from 'nanoid';
 import { useEffect } from 'react';
 import ContactCard from './contactCard/ContactCard';
@@ -15,7 +16,7 @@ function ContactDetails() {
 
       useEffect(()=>{
 
-            dispatch(fetchUsersDetail());    
+            dispatch(fetchUsersDetail(i18next.language));    
       },[])
 
       if ( loading ) return  <LoadingMessage/>

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Layout, Typography } from 'antd';
 import { SkyPhoneImage } from '../assets';
 import { ContactDetails } from '../component';
@@ -6,7 +7,8 @@ const { Content } = Layout;
 const { Title } = Typography;
 
 function Home() {
-      
+      const { t } = useTranslation();
+
       return (
             <Layout className='home__container  bg-semi-white flex flex-col justify-center gap-10 w-[98%] self-center 
                               sm:gap-14
@@ -21,7 +23,7 @@ function Home() {
                         />
                         
                         <Title className="text-6xl p-0 m-0 self-center flex gap-2 text-center">
-                              <span className='text-blue-600'>Contact Detail</span>
+                              <span className='text-blue-600'>{`${t('Contact')} ${t('Detail')}`}</span>
                         </Title>
                   </Content>
 

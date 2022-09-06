@@ -1,4 +1,5 @@
 import { Card, Avatar, Layout, Typography  } from 'antd';
+import { useTranslation } from 'react-i18next';
 import { EmailIcon, PhoneIcon, WebIcon } from '../../../../assets';
 
 const { Meta } = Card;
@@ -13,10 +14,13 @@ interface IDetailTexts{
 }
 
 function DetailTexts({ name, email, phone, website}: IDetailTexts) {
+      const { t } = useTranslation(); 
 
       return (
             <Content className={`detail-text__container flex flex-col gap-6 justify-center`}>
-                  <Title className='text-2xl m-0'>{name}</Title>
+                  <Title className='text-2xl m-0 truncate'>
+                        {t('Name')}: {name}
+                  </Title>
 
                   <Content className={`flex flex-col gap-3`}>
                         <Meta
